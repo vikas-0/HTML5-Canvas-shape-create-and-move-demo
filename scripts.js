@@ -131,7 +131,7 @@ function CanvasState(canvas) {
     }, true);
     canvas.addEventListener('mouseup', function (e) {
         myState.dragging = false;
-        myState.newTrianlge = false;
+        myState.newTrianlge = false;  //stop drawing new triangle
         myState.selection = null;
         if (myState.triangles[myState.triangles.length - 1].w === 0 || myState.triangles[myState.triangles.length - 1].h === 0) {
             myState.triangles.pop();
@@ -200,7 +200,6 @@ CanvasState.prototype.getMouse = function (e) {
     mx = e.pageX - offsetX;
     my = e.pageY - offsetY;
 
-    // We return a simple javascript object (a hash) with x and y defined
     return { x: mx, y: my };
 }
 
